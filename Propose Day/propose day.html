@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propose Day</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #e74c3c;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .btn1{
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            background-color: dodgerblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            background-color: dodgerblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translate(
+                calc(-50% + 100px * Math.random()),
+                calc(-50% + 100px * Math.random())
+            );
+        }        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💕 Propose Day 💕</h1>
+        <p>On this special day, I want to express my feelings for you:</p>
+        <p>"Will you be my forever love?"</p>
+        
+            <button class="btn1" onclick="window.location.href = 'propose2.html'">Say Yes!</button>
+            <button class="btn">Say No!</button>
+
+        <p id="response"></p>
+    </div>
+
+    <script>
+        // Add your custom JavaScript here
+        function showResponse() {
+            const responseElement = document.getElementById("response");
+            responseElement.textContent = "I'm waiting for your answer! ❤️";
+        }
+    </script>
+    <script>
+        const button = document.querySelector('.btn');
+        button.addEventListener('mouseenter', () => {
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
